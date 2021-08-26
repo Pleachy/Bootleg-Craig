@@ -9,6 +9,7 @@ const Register = (props) => {
     return <div>
             <form onSubmit={async (event) => {
                 event.preventDefault();
+                
                 const response = await fetch(`${BASE_URL}/users/register`, {
                     method: 'POST',
                     headers: {

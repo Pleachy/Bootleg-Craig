@@ -2,14 +2,42 @@ import React, {useState} from 'react'
 
 
 const Login = (props) => {
-
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const {BASE_URL, setToken, setUser} = props;
 
 
     return <div>
-        <form onSubmit={(event) => {
+        <form onSubmit={async (event) => {
             event.preventDefault();
+
+            const response = await fetch(`${BASE_URL}/users/login`, {
+                method: "POST",
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  user: {
+                    username,
+                    password
+                  }
+                })
+              }).then(response => response.json())
+                .then(result => {
+                  console.log(result);
+                  if (result.data) {
+                      setToken(result.data.token);
+                      setUsername('')
+                      setPassword('')
+                  }else {
+                      alert('Invalid username or password');
+                      setUsername('')
+                      setPassword('')
+                  }
+                })
+                .catch(console.error);
+
+
         }}>
             <div>
                 <label>Enter Username:</label>

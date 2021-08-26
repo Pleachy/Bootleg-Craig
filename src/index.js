@@ -31,7 +31,7 @@ const App = () => {
             <Register setToken={setToken} BASE_URL={BASE_URL}/>
         </Route>
         <Route exact path ="/login">
-            <Login/>
+            <Login setToken={setToken} setUser={setUser} BASE_URL={BASE_URL}/>
         </Route>
     </div>
 }
