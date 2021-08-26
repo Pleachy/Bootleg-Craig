@@ -25,7 +25,7 @@ const App = () => {
             <FetchPosts BASE_URL={BASE_URL} setPosts={setPosts} posts={posts}/>
         </Route>
         <Route exact path="/register">
-            <Register token={token}/>
+            <Register setToken={setToken} BASE_URL={BASE_URL}/>
         </Route>
     </div>
 }
