@@ -6,10 +6,6 @@ const Register = (props) => {
     const [password, setPassword] = useState('');
     const {BASE_URL, setToken} = props;
 
-    const handleExistingUser = () => {
-        
-    }
-
     return <div>
             <form onSubmit={async (event) => {
                 event.preventDefault();

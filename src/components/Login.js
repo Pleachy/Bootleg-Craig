@@ -8,14 +8,18 @@ const Login = (props) => {
 
 
     return <div>
-        <form>
+        <form onSubmit={(event) => {
+            event.preventDefault();
+        }}>
             <div>
                 <label>Enter Username:</label>
-                <input type='text' name='password' value={username}></input>
+                <input type='text' name='password' value={username}
+                onChange={(event) => setUsername(event.target.value)}></input>
             </div>
             <div>
                 <label>Enter Password:</label>
-                <input type='password' name='password' value={password}></input>
+                <input type='password' name='password' value={password}
+                onChange={(event) => setPassword(event.target.value) }></input>
             </div>
             <button type='submit'>Login</button>
         </form>
