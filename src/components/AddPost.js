@@ -5,11 +5,13 @@ const AddPost = (props) => {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [location, setLocation] = useState('');
-    const [willDeliverCheckbox, setWillDeliverCheckbox] = useState('');
     const [willDeliver, setWillDeliver] = useState(false);
 
     return <div>
-        <form className="new-post">
+        <form className="new-post" onSubmit={async (event) => {
+            event.preventDefault();
+            console.log(willDeliver);
+        }}>
             <div>
                 <label>Enter Post Title</label>
                 <input type='text' placeholder='title' value={title}
@@ -33,10 +35,10 @@ const AddPost = (props) => {
             <div>
                 <label>Available For Delivery</label>
                 <input type='checkbox' name='willdeliver' value='true'
-                onChange={(event) => setWillDeliverCheckbox(event.target.value)}></input>
+                onClick={(event) => setWillDeliver(!willDeliver)}></input>
             </div>
-        </form>
-        
+            <button type='submit'>Submit Post</button>
+        </form> 
     </div>
 }
 
