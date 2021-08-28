@@ -30,7 +30,7 @@ const Login = (props) => {
                       setUsername('')
                       setPassword('')
                   }else {
-                      alert('Invalid username or password');
+                      alert('Invalid username or password, If you don\'t have an account, use the register link to make one');
                       setUsername('')
                       setPassword('')
                   }
@@ -51,8 +51,6 @@ const Login = (props) => {
             </div>
             <button type='submit'>Login</button>
         </form>
-
-
     </div>
 }
 
