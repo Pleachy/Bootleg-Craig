@@ -24,7 +24,6 @@ const Login = (props) => {
                 })
               }).then(response => response.json())
                 .then(result => {
-                  console.log(result);
                   if (result.data) {
                       setToken(result.data.token);
                       localToken = result.data.token;
@@ -45,7 +44,7 @@ const Login = (props) => {
               },
             }).then(response => response.json())
               .then(result => {
-                console.log(result);
+                setUser(result.data);
               })
               .catch(console.error);
 
