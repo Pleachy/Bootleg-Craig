@@ -1,7 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const AddPost = () => {
-    return <div>Hello World</div>
+const AddPost = (props) => {
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [price, setPrice] = useState('');
+    const [location, setLocation] = useState('');
+    const [willDeliver, setWillDeliver] = useState(false);
+
+    return <div>
+        <form>
+            <label></label>
+
+        </form>
+        
+    </div>
 }
 
 

@@ -34,7 +34,7 @@ const App = () => {
             </div>
         }
         <Route exact path="/posts">
-            <AddPost/>
+            <AddPost token={token} fetchPosts={fetchPosts}/>
             <FetchPosts token={token} BASE_URL={BASE_URL} setPosts={setPosts} posts={posts} fetchPosts={fetchPosts}/>
         </Route>
         <Route exact path="/register">
