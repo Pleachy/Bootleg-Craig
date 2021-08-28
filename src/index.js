@@ -29,7 +29,7 @@ const App = () => {
             <div id="navbar">
                 <Link to='/posts'>Posts </Link>
                 {token ? <Link to='/profile'>Profile </Link> : null}
-                {token ? <Link to='/logout'>Logout </Link> : null }
+                {token ? <button onClick={() => setToken('')}>Logout</button> : null }
                 {!token ? <Link to='/register'>register</Link> : null}
                 {!token ? <Link to='/login'>Login</Link> : null}
             </div>
