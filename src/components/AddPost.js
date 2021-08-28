@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 const AddPost = (props) => {
+    const {token, fetchPosts, BASE_URL} = props;
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
@@ -10,7 +11,34 @@ const AddPost = (props) => {
     return <div>
         <form className="new-post" onSubmit={async (event) => {
             event.preventDefault();
-            console.log(willDeliver);
+
+            await fetch(`${BASE_URL}/posts`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                post: {
+                title,
+                description,
+                location,
+                price,
+                willDeliver
+                }
+            })
+            }).then(response => response.json())
+            .then(result => {
+                setTitle('');
+                setDescription('');
+                setPrice('');
+                setLocation('');
+                setWillDeliver(false);
+            })
+            .catch(console.error);
+
+            await fetchPosts();
+
         }}>
             <div>
                 <label>Enter Post Title</label>

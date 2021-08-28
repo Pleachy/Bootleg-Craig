@@ -21,6 +21,7 @@ const App = () => {
         const response = await fetch(`${BASE_URL}/posts`);
         const data = await response.json();
         setPosts(data.data.posts);
+        console.log("posts reset");
     }
 
     return <div className="app">
@@ -34,7 +35,7 @@ const App = () => {
             </div>
         }
         <Route exact path="/posts">
-            <AddPost token={token} fetchPosts={fetchPosts}/>
+            {token ? <AddPost token={token} fetchPosts={fetchPosts} BASE_URL={BASE_URL}/> : null}
             <FetchPosts token={token} BASE_URL={BASE_URL} setPosts={setPosts} posts={posts} fetchPosts={fetchPosts}/>
         </Route>
         <Route exact path="/register">
