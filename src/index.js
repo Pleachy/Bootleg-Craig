@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-
+/*QUESTIONS
+why useEffect in FetchPosts work? is that ok to do? should i put it into index.js?
+*/
 
 import {
     FetchPosts,
