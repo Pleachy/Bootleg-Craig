@@ -7,7 +7,8 @@ import {
     FetchPosts,
     Register,
     Login,
-    AddPost
+    AddPost,
+    ViewPostDetails
 } from './components';
 
 const BASE_URL = "https://strangers-things.herokuapp.com/api/2105-SJS-RM-WEB-PT";
@@ -29,8 +30,8 @@ const App = () => {
                 <Link to='/posts'>Posts </Link>
                 {token ? <Link to='/profile'>Profile </Link> : null}
                 {token ? <Link to='/logout'>Logout </Link> : null }
-                <Link to='/register'>register</Link>
-                <Link to='/login'>Login</Link>
+                {!token ? <Link to='/register'>register</Link> : null}
+                {!token ? <Link to='/login'>Login</Link> : null}
             </div>
         }
         <Route exact path="/posts">
@@ -42,6 +43,9 @@ const App = () => {
         </Route>
         <Route exact path ="/login">
             <Login setToken={setToken} setUser={setUser} BASE_URL={BASE_URL}/>
+        </Route>
+        <Route exact path="/posts/:postId">
+            <ViewPostDetails/>
         </Route>
     </div>
 }

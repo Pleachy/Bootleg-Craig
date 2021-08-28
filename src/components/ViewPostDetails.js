@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ViewPostDetails = () => {
-
+const ViewPostDetails = (props) => {
+    return <div>Hello World</div>
 }
 
-//used by FetchSinglePost.js
+//used by App in index.js
 export default ViewPostDetails;

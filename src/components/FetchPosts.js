@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import React from 'react';
+import React, {useEffect, useState} from "react";
+import {Link} from 'react-router-dom';
 import {default as FetchSinglePost} from './FetchSinglePost.js';
 
 const FetchPosts = (props) => {
@@ -12,7 +12,11 @@ const FetchPosts = (props) => {
     return <>
         <h3>Bootleg Craig</h3>
         {
-            posts ? posts.map((post, index) => <FetchSinglePost key={post._id} post={post} token={token}/>) : null
+            posts ? 
+            posts.map((post, index) => 
+                <FetchSinglePost key={post._id} post={post} token={token}>
+                    {token ? <Link to={`/posts/${post._id}`}>Post Details</Link> : null}
+                </FetchSinglePost>) : null
         }
     </>
 }
