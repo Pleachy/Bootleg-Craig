@@ -14,7 +14,6 @@ const FetchPosts = (props) => {
         }
         }).then(response => response.json())
         .then(result => {
-            console.log(result);
         })
         .catch(console.error);
 
@@ -33,7 +32,8 @@ const FetchPosts = (props) => {
                 <FetchSinglePost key={post._id} post={post} token={token}>
                     {token ? <Link to={`/posts/${post._id}`}>Post Details</Link> : null}
                     {
-                        user.username === post.author.username ? <button onClick={(event) => handleDelete(post._id)}>Delete Post</button> : null
+                        user.username === post.author.username ? <button onClick={(event) => 
+                            handleDelete(post._id)}>Delete Post</button> : null
                     }
                 </FetchSinglePost>) : null
         }
