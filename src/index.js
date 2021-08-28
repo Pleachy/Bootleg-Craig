@@ -6,7 +6,8 @@ import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import {
     FetchPosts,
     Register,
-    Login
+    Login,
+    AddPost
 } from './components';
 
 const BASE_URL = "https://strangers-things.herokuapp.com/api/2105-SJS-RM-WEB-PT";
@@ -33,6 +34,7 @@ const App = () => {
             </div>
         }
         <Route exact path="/posts">
+            <AddPost/>
             <FetchPosts token={token} BASE_URL={BASE_URL} setPosts={setPosts} posts={posts} fetchPosts={fetchPosts}/>
         </Route>
         <Route exact path="/register">
