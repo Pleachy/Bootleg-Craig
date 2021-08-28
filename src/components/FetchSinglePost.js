@@ -10,8 +10,10 @@ const FetchSinglePost = (props) => {
         <div>{post.location}</div>
         <div>Posted On: {post.createdAt}</div>
         <div>Posted By: {post.author.username}</div>
+        
     </div>
 
 }
 
+//used by FetchPosts.js
 export default FetchSinglePost;

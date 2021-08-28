@@ -54,6 +54,6 @@ const Login = (props) => {
     </div>
 }
 
-
+//used in App by index.js
 export default Login;
 

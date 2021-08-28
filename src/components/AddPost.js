@@ -70,5 +70,5 @@ const AddPost = (props) => {
     </div>
 }
 
-
+//used in App by index.js
 export default AddPost;

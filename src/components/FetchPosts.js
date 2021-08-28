@@ -12,10 +12,10 @@ const FetchPosts = (props) => {
     return <>
         <h3>Bootleg Craig</h3>
         {
-            posts ? posts.map((post, index) => <FetchSinglePost key={post._id} post={post}/>) : null
+            posts ? posts.map((post, index) => <FetchSinglePost key={post._id} post={post} token={token}/>) : null
         }
     </>
 }
 
-
+//used in App by index.js
 export default FetchPosts;

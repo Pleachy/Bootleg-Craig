@@ -21,7 +21,6 @@ const App = () => {
         const response = await fetch(`${BASE_URL}/posts`);
         const data = await response.json();
         setPosts(data.data.posts);
-        console.log("posts reset");
     }
 
     return <div className="app">
