@@ -7,25 +7,35 @@ const Profile = (props) => {
     const {user} = props;
     let sentMessages = [];
     let receivedMessages = [];
+    let userPosts = [];
+    console.log(user);
     try {
         sentMessages = user.messages.filter(message => message.fromUser.username === user.username)
         receivedMessages = user.messages.filter(message => message.fromUser.username != user.username)
+        userPosts = user.posts;
     } catch (error) {
         alert("There was an authentication error, please log in again.");
         history.push("/login");
     }
-    return <>
+    return <div className='profile-message-display'>
+            <h2>Sent Messages</h2>
              <div className="sent-messages">
-                {sentMessages.map(message => {
-                    return <div>{message.content}</div>
+                {sentMessages.map((message, index) => {
+                    return <div key={index}>{message.content}</div>
                 })}
             </div>
+            <h2>Received Messages</h2>
             <div className="received-messages">
-                {receivedMessages.map(message => {
-                    return <div>{message.content}</div>
+                {receivedMessages.map((message, index) => {
+                    return <div key={index}>{message.content}</div>
                 })}
             </div>
-        </>
+            <h2>Your Posts</h2>
+            <div className="user-posts">
+
+            </div>
+        </div>
 }
 
+//used by App in index.js
 export default Profile
