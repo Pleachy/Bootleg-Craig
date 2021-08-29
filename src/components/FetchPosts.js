@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Link} from 'react-router-dom';
 import {default as FetchSinglePost} from './FetchSinglePost.js';
+import {default as Messages} from './Messages'
 
 const FetchPosts = (props) => {
     const {BASE_URL, posts, fetchPosts, token, user} = props;
@@ -35,6 +36,9 @@ const FetchPosts = (props) => {
                         user.username === post.author.username ? <button onClick={(event) => 
                             handleDelete(post._id)}>Delete Post</button> : null
                     }
+                    {token && user.username != post.author.username ? <Messages post={post}
+                    token={token} BASE_URL={BASE_URL}/> : null}
+                    
                 </FetchSinglePost>) : null
         }
     </>
