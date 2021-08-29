@@ -26,7 +26,6 @@ const FetchPosts = (props) => {
     }, [token])
 
     return <>
-        <h3>Bootleg Craig</h3>
         {
             posts ? 
             posts.map((post, index) => 

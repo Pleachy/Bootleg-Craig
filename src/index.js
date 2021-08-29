@@ -12,7 +12,8 @@ import {
     Register,
     Login,
     AddPost,
-    ViewPostDetails
+    ViewPostDetails,
+    Profile
 } from './components';
 
 const BASE_URL = "https://strangers-things.herokuapp.com/api/2105-SJS-RM-WEB-PT";
@@ -50,6 +51,9 @@ const App = () => {
         </Route>
         <Route exact path="/posts/:postId">
             <ViewPostDetails user={user} posts={posts} token={token} setPosts={setPosts} BASE_URL={BASE_URL}/>
+        </Route>
+        <Route exact path="/profile">
+            <Profile/>
         </Route>
     </div>
 }
