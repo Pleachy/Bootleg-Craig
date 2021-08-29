@@ -14,9 +14,6 @@ const Profile = (props) => {
         alert("There was an authentication error, please log in again.");
         history.push("/login");
     }
-    console.log("sent messages: ", sentMessages);
-    console.log("received messages: ", receivedMessages);
-    console.log(user);
     return <>
              <div className="sent-messages">
                 {sentMessages.map(message => {

@@ -25,7 +25,6 @@ const FetchSinglePost = (props) => {
         history.push('/login');
         return null;
     }
-
 }
 
 //used by FetchPosts.js and ViewPostDetails.js
