@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 /*QUESTIONS
-- why useEffect in FetchPosts work? is that ok to do? should i put it into index.js?
 - Ask about the fetch code that the API provides, is what i'm doing with .then ok or will
 i get points off for it.
 */
@@ -22,12 +21,24 @@ const App = () => {
     const [posts, setPosts] = useState([]);
     const [token, setToken] = useState('');
     const [user, setUser] = useState({});
-
+    
     const fetchPosts = async () => {
         const response = await fetch(`${BASE_URL}/posts`);
         const data = await response.json();
         setPosts(data.data.posts);
     }
+
+    const props = {
+        posts,
+        setPosts,
+        token,
+        setToken,
+        user, 
+        setUser,
+        BASE_URL,
+        fetchPosts
+    }
+
 
     return <div className="app">
         {
