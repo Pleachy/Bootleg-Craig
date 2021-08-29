@@ -2,7 +2,7 @@ import React from 'react';
 import {useHistory} from 'react-router-dom';
 
 const FetchSinglePost = (props) => {
-    const {post, token, children} = props;
+    const {post, children} = props;
     const history = useHistory();
 
     //try catch statement is here to prevent user from seeing an error screen if they
