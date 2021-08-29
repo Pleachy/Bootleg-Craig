@@ -18,8 +18,15 @@ const Profile = (props) => {
     console.log("received messages: ", receivedMessages);
     console.log(user);
     return <>
-             <div className="messages">
-        
+             <div className="sent-messages">
+                {sentMessages.map(message => {
+                    return <div>{message.content}</div>
+                })}
+            </div>
+            <div className="received-messages">
+                {receivedMessages.map(message => {
+                    return <div>{message.content}</div>
+                })}
             </div>
         </>
 }
