@@ -53,7 +53,7 @@ const App = () => {
             <ViewPostDetails user={user} posts={posts} token={token} setPosts={setPosts} BASE_URL={BASE_URL}/>
         </Route>
         <Route exact path="/profile">
-            <Profile/>
+            <Profile user={user}/>
         </Route>
     </div>
 }

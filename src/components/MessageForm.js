@@ -20,7 +20,8 @@ const MessageForm = (props) => {
                 })
             }).then(response => response.json())
               .then(result => {
-                  console.log(result);
+                  setContent('');
+                  alert("Message Sent!");
               })
               .catch(console.error)
 
