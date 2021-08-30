@@ -71,7 +71,7 @@ const App = () => {
             <ViewPostDetails user={user} posts={posts} token={token} setPosts={setPosts} BASE_URL={BASE_URL}/>
         </Route>
         <Route exact path="/profile">
-            <Profile user={user}/>
+            <Profile user={user} token={token}/>
         </Route>
         <Route exact path="/add-post-form">
             <AddPost token={token} fetchPosts={fetchPosts} BASE_URL={BASE_URL}/>

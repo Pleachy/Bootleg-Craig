@@ -28,14 +28,14 @@ const Login = (props) => {
                   if (result.data) {
                       setToken(result.data.token);
                       localToken = result.data.token;
-                      setUsername('')
-                      setPassword('')
-                      history.push('/posts')
+                      setUsername('');
+                      setPassword('');
+                      history.push('/posts');
 
                   }else {
                       alert('Invalid username or password, If you don\'t have an account, use the register link to make one');
-                      setUsername('')
-                      setPassword('')
+                      setUsername('');
+                      setPassword('');
                   }
                 })
                 .catch(console.error);

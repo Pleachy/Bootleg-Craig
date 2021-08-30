@@ -9,12 +9,12 @@ const FetchSinglePost = (props) => {
     //refresh their browser while looking at post details.
     try {
         return <div key={post._id} className='post-body'>
-            <h2>{post.title}</h2>
+            <h3>{post.title}</h3>
             <div>{post.description}</div>
             <div>{post.price}</div>
             <div>{post.location}</div>
             <div>Posted On: {post.createdAt}</div>
-            <div>Posted By: {post.author.username}</div>
+            {post.author.username ? <div>Posted By: {post.author.username}</div> : null}
             {
                 children
             }
