@@ -58,7 +58,7 @@ const App = () => {
         }
         <Route exact path="/posts">
             {token ? <button><Link to='/add-post-form'>Create New Post</Link></button> : null}
-            <FilterPosts/>
+            <FilterPosts setPosts={setPosts} posts={posts} fetchPosts={fetchPosts}/>
             <FetchPosts user={user} token={token} BASE_URL={BASE_URL} posts={posts} fetchPosts={fetchPosts}/>
         </Route>
         <Route exact path="/register">

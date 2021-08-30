@@ -8,8 +8,6 @@ const Profile = (props) => {
     let sentMessages = [];
     let receivedMessages = [];
     let userPosts = [];
-    console.log(user.posts);
-    console.log(user);
     try {
         sentMessages = user.messages.filter(message => message.fromUser.username === user.username)
         receivedMessages = user.messages.filter(message => message.fromUser.username != user.username)
