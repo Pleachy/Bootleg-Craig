@@ -39,17 +39,17 @@ const Profile = (props) => {
             <h2>Your Posts</h2>
             <div className="user-posts">
                 {
-                    user.posts.map(post => {
-                        return user.posts ? <FetchSinglePost key={post._id} post={post} token={token}>
-                            {token && post.active ? <Link to={`/posts/${post._id}`}>Post Details</Link> : null}
+                   user.posts ? user.posts.map(post => {
+                        return token && user.posts ? <FetchSinglePost key={post._id} post={post} token={token}>
+                            {post.active ? <Link to={`/posts/${post._id}`}>Post Details</Link> : null}
                             {
                                 user.username === post.author.username ? <button onClick={(event) => 
                                     handleDelete(post._id)}></button> : null
                             }
                             {!post.active ? <div><em>Deleted Post, Details Unavailable</em></div> : null}
                         </FetchSinglePost> : null
-                    })
-                }
+                    }) : null
+                } 
             </div>
         </div>
 }
