@@ -10,9 +10,10 @@ const Login = (props) => {
     let localToken = '';
 
     return <div>
+        <h2>Login</h2>
         <form onSubmit={async (event) => {
             event.preventDefault();
-            const response = await fetch(`${BASE_URL}/users/login`, {
+            await fetch(`${BASE_URL}/users/login`, {
                 method: "POST",
                 headers: {
                   'Content-Type': 'application/json'
@@ -40,7 +41,7 @@ const Login = (props) => {
                 })
                 .catch(console.error);
 
-            const userResponse = await fetch(`${BASE_URL}/users/me`, {
+            await fetch(`${BASE_URL}/users/me`, {
               headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${localToken}`

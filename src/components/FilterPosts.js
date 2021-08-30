@@ -40,5 +40,5 @@ const FilterPosts = (props) => {
         </div>
 }
 
-//used by App in index.js, Profile.js
+//used by App in index.js
 export default FilterPosts;

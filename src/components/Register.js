@@ -1,12 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 
 const Register = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const {BASE_URL, setToken} = props;
+    const history = useHistory();
 
     return <div>
+            <h2>Register</h2>
             <form onSubmit={async (event) => {
                 event.preventDefault();
 
@@ -27,6 +30,8 @@ const Register = (props) => {
                         //setToken(result.data.token);
                         setUsername('')
                         setPassword('')
+                        alert('Thank you for signing up!');
+                        history.push('/login');
                       } else {
                           setUsername('')
                           setPassword('')
